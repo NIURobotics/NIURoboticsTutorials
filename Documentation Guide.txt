@@ -1,0 +1,124 @@
+---------------------------------------------------------------------------------------
+NAMING CONVENTION
+
+Variable names: At least 2 words camel case
+Ex: linearSlide, linSlide or linSlideMotor all work
+
+Function names: At least 2 words camel case, used to name modules
+Ex: tankDrive(), rollerControl(), etc.
+
+Class names: Usually 1 word
+Ex: Servo, Apple, Camera, etc.
+
+File names: At least 1 or 2 words camel case
+Ex: TankDrive.cpp, Roller.cpp, etc.
+---------------------------------------------------------------------------------------
+CREATING MODULES
+
+A module refers to a system or subsystem of the robot.
+Ex: tankDrive, rollerControl, gripperControl, etc.
+
+Each module combines both a header file (.h) and a C++ file (.cpp) to successfully
+define the system or subsystem operations for the robot.
+Ex: tankDrive.cpp and tankDrive.h
+
+The header file should contain either function prototypes or class definitions.
+Ex:
+#ifndef TANKDRIVE_H
+#define TANKDRIVE_H
+
+#include <Arduino.h> // Including this allows the arduino compiler to compile your code
+                     // in conjunction with the arduino ino file.
+
+// Functions prototypes or Class definitions go here
+void tankDrive(int [], int); // Include a brief comment on what the function does
+
+#endif
+
+The C++ file should include the header file and specific function/method documentation.
+SEE FUNCTION DOCUMENTATION FOR MORE INFO
+
+Ex:
+
+// Module Documentation goes here
+// See MODULE DOCUMENTATION section for more details
+
+#include "TankDrive.h"
+
+// Function documentation goes here
+void tankDrive(int controllerVals[], int timeout)
+{
+  // code goes here
+}// end tankDrive()
+---------------------------------------------------------------------------------------
+MODULE DOCUMENTATION
+/*************************************************************************
+Module Name: Put module name here (Ex: TankDrive)                      
+                                                                        
+Description:                                                           
+       Write what the module is and what it does.                           
+       Ex:
+       The TankDrive module contains the necessary code to operate the drive
+       system of the robot. The right joystick controls the forward/backward
+       movement of the right side wheels. The left joystick controls the
+       forward/backward movement of the left side wheels.                               
+                                                                        
+Notes: Add anything special to know about here.
+       Ex:
+       Please note that pins A4 and A5 were chosen because A6 and A7
+       don't work.     
+*************************************************************************/
+---------------------------------------------------------------------------------------
+FUNCTION DOCUMENTATION
+
+/*************************************************************************
+Use: What the function is used for, or how to use it. Details are good 
+                                                                        
+Arguments:                                                             
+   int a: Put as many details as possible. Where it's found, what it    
+   does, why it exists, how it's used, etc.                             
+   string b: details regarding string b.                                
+                                                                       
+Return: What the function returns. In the case of void, none.          
+*************************************************************************/
+void function(int a, string b)
+{
+  //code goes here, the more comments, the better
+  // Starting 2 spaces from the brackets:
+  int exampleVariable = 0;
+
+}//end function()  <--- don't worry about putting the arguments back in, it's just a comment
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+PSEUDOCODE
+
+Before writing actual code, do pseudocode first. Ideas sound much better in one's head
+until it hits the screen. It is also acts like step-by-step instructions and is
+convenient to resume work without having to figure out what your code does. The
+pseudocode should inevitably end up as comments next to the lines of code that actually 
+do the work when the code is finished.
+
+EXAMPLE:
+
+Before coding:
+//initialize character array
+//initialize counter
+//while loop that runs 10 times
+   //display character
+//end while loop
+
+After coding:
+char symbol[]; //initialize character array
+int i = 0; //initialize counter
+while(i < 10) //while loop that runs 10 times
+{
+     cout << symbol[i]; //display character
+}//end while loop
+
+Notice how the comments in the "after coding" portion came word-for-word in the 
+"before coding" portion.
+----------------------------------------------------------------------------------------
+FLOW CHARTS https://en.wikipedia.org/wiki/Flowchart#Types
+
+These are used to visualize what the code does. 
+----------------------------------------------------------------------------------------
